@@ -7,10 +7,6 @@ class Artist
     @@all << self
   end
 
-  def songs
-    @@all
-  end
-
   def add_song(song)
     @@all << song
     song.artist = self
@@ -23,6 +19,10 @@ class Artist
 
   def self.all
     @@all
+  end
+
+  def songs
+    Song.all.select {|song| song.artist = self}
   end
 
   def self.song_count
