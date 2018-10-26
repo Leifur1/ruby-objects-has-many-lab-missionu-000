@@ -16,7 +16,7 @@ class Author
     @@all << post
   end
 
-  def add_post_by_title(title)
+  def add_post_by_title(name)
     post = Post.new
     post.artist = self
   end
